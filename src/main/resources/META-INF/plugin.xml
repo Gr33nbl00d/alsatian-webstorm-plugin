@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>de.greenblood.alsatian.webstorm.plugin.alsatian-webstorm-plugin</id>
     <name>Alsatian Test</name>
-    <vendor email="florian.roettges@googlemail.com" url="https://github.com/gr33nblood/alsatian-webstorm-plugin">
+    <vendor email="florian.roettges@googlemail.com" url="https://github.com/gr33nbl00d/alsatian-webstorm-plugin">
         Gr33nbl00d
     </vendor>
     <version>1.0.0-SNAPSHOT</version>
