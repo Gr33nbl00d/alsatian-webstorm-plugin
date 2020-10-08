@@ -1,0 +1,53 @@
+<idea-plugin>
+    <id>de.greenblood.alsatian.webstorm.plugin.alsatian-webstorm-plugin</id>
+    <name>Alsatian Test</name>
+    <vendor email="florian.roettges@googlemail.com" url="https://github.com/gr33nblood/alsatian-webstorm-plugin">
+        Gr33nbl00d
+    </vendor>
+    <version>1.0.0-SNAPSHOT</version>
+    <description><![CDATA[
+    <B>Alsatian Test Plugin</B><br>
+    <ul>
+        <li>Allow to run alsatian tests</li>
+        <li>Allow to debug alsatian tests</li>
+        <li>Show test coverage</li>
+    </ul>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <idea-version since-build="2020.12"/>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>JavaScript</depends>
+    <depends>JavaScriptDebugger</depends>
+    <depends>NodeJS</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService
+                serviceImplementation="de.greenlood.alsatian.webstorm.plugin.pluginconfig.AlsatianPluginSettingsState"/>
+        <projectConfigurable
+                instance="de.greenlood.alsatian.webstorm.plugin.pluginconfig.AlsatianPluginSettings"
+                displayName="Alsatian" nonDefaultProject="false"></projectConfigurable>
+        <configurationType implementation="de.greenlood.alsatian.webstorm.plugin.AlsatianConfigurationType"/>
+        <programRunner id="Run"
+                       implementation="de.greenlood.alsatian.webstorm.plugin.AlsatianRunProgramRunner"
+                       order="first"/>
+        <coverageRunner implementation="de.greenlood.alsatian.webstorm.plugin.coverage.AlsatianCoverageRunner"
+                        id="Cov" order="first"/>
+        <coverageEngine implementation="de.greenlood.alsatian.webstorm.plugin.coverage.AlsatianCoverageEngine"/>
+        <!--<programRunner id="Debug" implementation="de.greenlood.alsatian.jetbrains.plugin.executor.AlsatianRunProgramRunner" order="last" />-->
+        <programRunner id="Debug" implementation="com.jetbrains.nodeJs.NodeDebugProgramRunner" order="first"/>
+        <programRunner
+                implementation="de.greenlood.alsatian.webstorm.plugin.coverage.AlsatianCoverageProgramRunner"/>
+        <projectService
+                serviceImplementation="de.greenlood.alsatian.webstorm.plugin.coverage.AlsatianCoverageAnnotator"/>
+        <runConfigurationProducer
+                implementation="de.greenlood.alsatian.webstorm.plugin.runconfig.AlsatianRunConfigurationProducer"/>
+        <httpRequestHandler
+                implementation="de.greenlood.alsatian.webstorm.plugin.rest.AlsatianTestExecutionListener"/>
+    </extensions>
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
