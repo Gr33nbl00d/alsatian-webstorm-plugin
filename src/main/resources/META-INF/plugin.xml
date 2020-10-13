@@ -6,12 +6,15 @@
     </vendor>
     <version>1.0.0-SNAPSHOT</version>
     <description><![CDATA[
-    <B>Alsatian Test Plugin</B><br>
-    <ul>
-        <li>Allow to run alsatian tests</li>
-        <li>Allow to debug alsatian tests</li>
-        <li>Show test coverage</li>
-    </ul>
+<p><strong>Alsatian Test Webstorm Plugin</strong><br /> <strong>Supports Alsatian Test Framework <a href="https://github.com/alsatian-test/alsatian">https://github.com/alsatian-test/alsatian</a></strong></p>
+<ul>
+<li>Allow to run alsatian tests</li>
+<li>Allow to debug alsatian tests</li>
+<li>Show test coverage</li>
+ <li>Execute single test methods</li>
+  <li>Execute single fixtures</li>
+  <li>Run all tests in path/project</li>
+</ul>
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
